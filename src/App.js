@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return <>
     <NavBar />
-    <h1 className="tituloPrincipal">Todo lo que en el mundo mágico se necesita</h1>
+
+    <ItemListContainer greeting="Todo lo que en el mundo mágico se necesita" />
     </>
 }
 

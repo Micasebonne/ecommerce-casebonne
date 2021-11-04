@@ -37,7 +37,22 @@
   }
 }
 
-.tituloPrincipal {
+.estilosTitulos {
   text-align: center;
   margin-top: 20px;
+}
+
+.tituloTienda {
+  background-color: violet;
+}
+
+.subtituloPrincipal {
+  text-decoration: underline wavy violet;
+}
+
+.cartWidget {
+  color: white;
+  font-size: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
