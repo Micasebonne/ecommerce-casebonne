@@ -1,10 +1,10 @@
 import React from 'react';
 import '../App.css';
-
-//let disponible = {data}
+import ItemCount from './ItemCount';
 
 export const Item = ({ item }) => {
     return (
+        <>
         <div className="itemContainer">
             <div key={item.id}>
                 <div className="itemImg">
@@ -14,9 +14,11 @@ export const Item = ({ item }) => {
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
                 <h4>Precio:$ {item.price}</h4>
+                <ItemCount key={item.id} max={item.stock} initial={1}/>
                 </div>
             </div>
         </div>    
+        </>
     );
 }
 

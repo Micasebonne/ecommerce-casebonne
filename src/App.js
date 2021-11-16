@@ -6,8 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 function App() {
   return <>
     <NavBar />
-
-    <ItemListContainer greeting="Todo lo que en el mundo mágico se necesita" />
+    <ItemListContainer />
     </>
     
 }
