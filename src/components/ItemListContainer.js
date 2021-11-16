@@ -1,10 +1,10 @@
 import React from 'react';
 import '../App.css';
 import { data } from './data';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ItemList from './ItemList';
 const ItemListContainer = () => {
-    const [items, setItems] = useState([data])
+    const [items, setItems] = useState([])
 
     const getItems = new Promise((resolve, reject) => {
         if (data.length > 0) {
@@ -12,13 +12,14 @@ const ItemListContainer = () => {
                 resolve(data)
             }, 2000);
         }else {
-            reject("Lo sentimos! Ocurrió un error")
+            reject("Error")
         }
     });
 
-getItems.then((res) => {setItems(res)})
-getItems.catch((err) => console.log(err))
-.finally(console.log("Proceso completado con exito!"))
+useEffect(() => {
+    getItems.then((res) => {setItems(res)})
+    getItems.catch((err) => console.log(err))
+}, []);
 
 return <>
         <h1 className="estilosTitulos tituloTienda">Der Zauberladen</h1>
