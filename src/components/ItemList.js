@@ -3,12 +3,12 @@ import Item from './Item';
 
 const ItemList = ({ items }) => {
     return (
-        <ul>
-        {items.map((item) => (
-            <Item key={item.id} item={item} />
-        ))}
+        <ul className="cardsItems">
+            {items.map((item) => (
+                <Item key={item.id} item={item} />
+            ))}
         </ul>
-        );
+    );
 };
-        
+
 export default ItemList;

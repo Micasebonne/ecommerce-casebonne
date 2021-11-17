@@ -18,20 +18,18 @@ const ItemCount = (props) => {
   };
 
   return (
-    <>
-      <div className="contenedor">
-        <button onClick={decrement}>
-          -
-        </button>
-        <p>{cantidadItem}</p>
-        <button onClick={increment}>
-          +
-        </button>
-      </div>
+    <div className="contenedorItemCount">
+      <button onClick={decrement}>
+        -
+      </button>
+      <p>{cantidadItem}</p>
+      <button onClick={increment}>
+        +
+      </button>
       <button className="botonAgregar" onClick={agregar}>
         Agregar al carrito
       </button>
-    </>
+    </div>
   );
 };
 

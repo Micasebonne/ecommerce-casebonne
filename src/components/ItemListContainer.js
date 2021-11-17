@@ -4,28 +4,28 @@ import { data } from './data';
 import { useState, useEffect } from "react";
 import ItemList from './ItemList';
 const ItemListContainer = () => {
-    const [items, setItems] = useState([])
+    const [datos, setDatos] = useState([])
 
-    const getItems = new Promise((resolve, reject) => {
+    const getDatos = new Promise((resolve, reject) => {
         if (data.length > 0) {
             setTimeout(() => {
                 resolve(data)
             }, 2000);
-        }else {
+        } else {
             reject("Error")
         }
     });
 
-useEffect(() => {
-    getItems.then((res) => {setItems(res)})
-    getItems.catch((err) => console.log(err))
-}, []);
+    useEffect(() => {
+        getDatos.then((res) => { setDatos(res) })
+        getDatos.catch((err) => console.log(err))
+    }, []);
 
-return <>
+    return <>
         <h1 className="estilosTitulos tituloTienda">Der Zauberladen</h1>
         <h2 className="estilosTitulos subtituloPrincipal">Todo lo que en el mundo mágico se necesita</h2>
-        <ItemList items={items} /> 
-        </>
+        <ItemList items={datos} />
+    </>
 };
 
- export default ItemListContainer;
+export default ItemListContainer;
