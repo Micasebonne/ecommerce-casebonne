@@ -2,26 +2,18 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { data } from './data';
-
-let is_ok = true;
-
-const getItem = new Promise((resolve, reject) => {
-    if (is_ok) {
-        setTimeout(() => {
-            resolve(data[0])
-        }, 2000);
-    } else {
-        reject("Error")
-    }
-});
+import { useParams } from 'react-router-dom'
+import customFetch from './customFetch';
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState([])
+    const [item, setItem] = useState([]);
+    const { idItem } = useParams();
 
     useEffect(() => {
-        getItem.then((res) => { setItem(res) })
-        getItem.catch((err) => alert(err))
-    }, []);
+        customFetch(2000, data.find(item => item.id === parseInt(idItem)))
+        .then((res) => { setItem(res) })
+        .catch((err) => alert(err))
+    }, [item]);
 
     return <>
         <ItemDetail item={item} />

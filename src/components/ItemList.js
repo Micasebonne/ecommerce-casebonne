@@ -3,11 +3,17 @@ import Item from './Item';
 
 const ItemList = ({ items }) => {
     return (
-        <ul className="cardsItems">
+        <>
+        {
+        items.length > 0
+        ? <ul className="cardsItems">
             {items.map((item) => (
-                <Item key={item.id} item={item} />
+                <Item key={item.id} item={item} id={item.id}/>
             ))}
         </ul>
+        : <p>Cargando...</p>
+        }
+        </>
     );
 };
 

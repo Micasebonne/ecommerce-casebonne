@@ -3,23 +3,20 @@ import '../App.css';
 import { data } from './data';
 import { useState, useEffect } from "react";
 import ItemList from './ItemList';
+import { useParams } from 'react-router';
+import customFetch from './customFetch';
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([])
-
-    const getDatos = new Promise((resolve, reject) => {
-        if (data.length > 0) {
-            setTimeout(() => {
-                resolve(data)
-            }, 2000);
-        } else {
-            reject("Error")
-        }
-    });
+    const { idCategory } = useParams();
 
     useEffect(() => {
-        getDatos.then((res) => { setDatos(res) })
-        getDatos.catch((err) => console.log(err))
-    }, []);
+        customFetch(2000, data.filter(item => {
+            if (idCategory === undefined) return item;
+            return item.categoryId === parseInt(idCategory)
+        }))
+            .then((res) => { setDatos(res) })
+            .catch((err) => console.log(err))
+    }, [datos]);
 
     return <>
         <h1 className="estilosTitulos tituloTienda">Der Zauberladen</h1>

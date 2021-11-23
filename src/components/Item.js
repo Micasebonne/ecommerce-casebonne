@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 export const Item = ({ item }) => {
     return (
@@ -12,7 +13,8 @@ export const Item = ({ item }) => {
                     <div className="itemInfo">
                         <h3>{item.title}</h3>
                         <p>{item.des}</p>
-                        <h4>${item.price}</h4>
+                        <h4>$ {item.price}</h4>
+                        <Link to={`/item/${item.id}`}><button>Ver detalles</button></Link>
                     </div>
                 </div>
             </div>

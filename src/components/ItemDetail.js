@@ -4,8 +4,8 @@ const ItemDetail = ({ item }) => {
   return (
     <>
       {
-        item.img
-          ?
+        item && item.img
+        ?
           <div className="containerItemDetail">
             <div key={item.id}>
               <div className="imgItemDetail">
