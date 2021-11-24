@@ -17,19 +17,19 @@ function NavBar() {
             <Link to='/' style={{textDecoration: "none"}}><a className="nav-link active" aria-current="page">Inicio</a></Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/25' style={{textDecoration: "none"}}><a className="nav-link">Pociones</a></Link>
+            <Link to='/category/pociones' style={{textDecoration: "none"}}><a className="nav-link">Pociones</a></Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/52' style={{textDecoration: "none"}}><a className="nav-link">Varitas</a></Link>
+            <Link to='/category/varitas' style={{textDecoration: "none"}}><a className="nav-link">Varitas</a></Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/92' style={{textDecoration: "none"}}><a className="nav-link">Escobas</a></Link>
+            <Link to='/category/escobas' style={{textDecoration: "none"}}><a className="nav-link">Escobas</a></Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/41' style={{textDecoration: "none"}}><a className="nav-link">Golosinas</a></Link>
+            <Link to='/category/golosinas' style={{textDecoration: "none"}}><a className="nav-link">Golosinas</a></Link>
             </li>
             <li className="nav-item">
-              <Link to='/category/29' style={{textDecoration: "none"}}><a className="nav-link">Mascotas</a></Link>
+              <Link to='/category/mascotas' style={{textDecoration: "none"}}><a className="nav-link">Mascotas</a></Link>
             </li>
           </ul>
         </div>

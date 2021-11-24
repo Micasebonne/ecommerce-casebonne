@@ -22,7 +22,20 @@ const ItemDetail = ({ item }) => {
               </div>
             </div>
           </div>
-          : <p>Cargando...</p>
+          : <>
+          <br></br>
+          <p className="spinner">Cargando...</p>
+          <div class="d-flex justify-content-center">
+              <div class="spinner-grow text-danger" role="status">
+                  <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-grow text-danger" role="status">
+                  <span class="visually-hidden">Loading...</span>
+              </div><div class="spinner-grow text-danger" role="status">
+                  <span class="visually-hidden">Loading...</span>
+              </div>
+          </div>
+      </>
       }
     </>
   );

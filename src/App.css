@@ -151,3 +151,9 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.spinner {
+  text-align: center;
+  color: #282c34;
+  font-size: 24px;
+}
