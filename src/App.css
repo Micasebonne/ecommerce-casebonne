@@ -62,7 +62,7 @@
   margin-right: 20px;
 }
 
-.contenedorItemCount {
+.contenedorBoton {
   margin-top: 5%;
   border-color: black;
   padding: 3%;
@@ -71,7 +71,7 @@
   justify-content: space-evenly;
 }
 
-.contenedorItemCount button {
+.botonCount {
   border-radius: 10%;
   border-color: violet;
   background-color: black;
@@ -156,4 +156,23 @@
   text-align: center;
   color: #282c34;
   font-size: 24px;
+}
+
+.botonInactivo {
+  border-radius: 10%;
+  border-color: grey;
+  background-color: rgb(0, 0, 0, 0.5);
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-size: 15px;
+}
+
+.botonCheckout {
+  border-radius: 10%;
+  border-color: black;
+  background-color:violet;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 15px; 
 }
