@@ -8,13 +8,14 @@ const Cart = () => {
 
     return (
         <>
-            <h1>Checkout</h1>
-            <p>Soy el componente Cart</p>
-            <Link to='/'><button>Continuar comprando</button></Link>
+            <h1 className="cartText">Tu carrito de compras</h1>
             {
                 (context.cartList.length > 0)
-                    ? <button onClick={context.clear}>Borrar todos los productos</button>
-                    : <p>Tu carrito está vacío</p>
+                    ? <div className="contenedorBotonCart"> 
+                    <Link to='/'><button className="botonCount">Continuar comprando</button></Link>
+                    <button onClick={context.clear} className="botonCount">Vaciar carrito</button>
+                    </div>
+                    : <p className="cartSubText">¡Tu carrito se encuentra vacío! :( </p>
             }
             {
                 context.cartList.length > 0
@@ -24,16 +25,19 @@ const Cart = () => {
                                 <img src={item.imgItem} title={item.img}></img>
                             </div>
                             <div className="cartDetail">
-                                <p>Producto: {item.nameItem}</p>
-                                <button onClick={() => context.removeItem(item.idItem)}>Borrar producto</button>
+                                <p className="cartSubText">Producto: {item.nameItem}</p>
+                                <button onClick={() => context.removeItem(item.idItem)} className="botonCount">Borrar producto</button>
                             </div>
                             <div className="precioCart">
-                                <p>{item.cantItem} item(s)</p>
-                                <p>$ {item.priceItem} cada uno</p>
+                                <p className="cartSubText">{item.cantItem} item(s)</p>
+                                <p className="cartSubText">$ {item.priceItem} cada uno</p>
                             </div>
                         </div>
                     )
-                    : <p>Falló</p>
+                    : <div className="contenedorBotonCart">
+                    <Link to='/'><button className="botonCount">Ir a comprar</button></Link>
+                    </div>
+                     
             }
         </>
     );

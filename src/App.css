@@ -198,3 +198,26 @@
   text-align: center;
   align-self: center;
 }
+
+.cartText {
+  text-align: center;
+  margin-top: 2%;
+}
+
+.cartSubText {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 2%;
+}
+
+.contenedorBotonCart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
