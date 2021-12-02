@@ -221,3 +221,19 @@
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
+.containerCompra {
+  border: solid purple;
+  padding: 2%;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.compraText {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
