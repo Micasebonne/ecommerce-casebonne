@@ -52,7 +52,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const descuento = () => {
-        return ((subtotalItems() + sumaIva()) * 0.20).toFixed(0);
+        return ((subtotalItems() + sumaIva()) * 0.20).toFixed(2);
     }
 
     const totalCompra = () => {

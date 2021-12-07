@@ -7,29 +7,29 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link to='/' style={{textDecoration: "none"}}><a className="navbar-brand">der Zauberladen</a></Link>
+        <Link to='/' style={{textDecoration: "none"}} className="navbar-brand">der Zauberladen</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-            <Link to='/' style={{textDecoration: "none"}}><a className="nav-link active" aria-current="page">Inicio</a></Link>
+            <Link to='/' style={{textDecoration: "none"}} className="nav-link" aria-current="page">Inicio</Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/pociones' style={{textDecoration: "none"}}><a className="nav-link">Pociones</a></Link>
+            <Link to='/category/sw1LqCOZTucSCl3AMMKB' style={{textDecoration: "none"}} className="nav-link">Pociones</Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/varitas' style={{textDecoration: "none"}}><a className="nav-link">Varitas</a></Link>
+            <Link to='/category/yZxh6cb8uG0gTplFpEEa' style={{textDecoration: "none"}} className="nav-link">Varitas</Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/escobas' style={{textDecoration: "none"}}><a className="nav-link">Escobas</a></Link>
+            <Link to='/category/2KASdxodk71N8pe2B2j7' style={{textDecoration: "none"}} className="nav-link">Escobas</Link>
             </li>
             <li className="nav-item">
-            <Link to='/category/golosinas' style={{textDecoration: "none"}}><a className="nav-link">Golosinas</a></Link>
+            <Link to='/category/l1WbHMcGk8s0tr2LrHKb' style={{textDecoration: "none"}} className="nav-link">Golosinas</Link>
             </li>
             <li className="nav-item">
-              <Link to='/category/mascotas' style={{textDecoration: "none"}}><a className="nav-link">Mascotas</a></Link>
+              <Link to='/category/TY4d7NcEWR1tqwW3moTs' style={{textDecoration: "none"}} className="nav-link">Mascotas</Link>
             </li>
           </ul>
         </div>

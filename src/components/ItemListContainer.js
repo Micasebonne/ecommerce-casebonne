@@ -5,13 +5,19 @@ import { useParams } from 'react-router';
 import firestoreFetch from '../utils/firestoreFetch';
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([])
-    const { categoryName } = useParams();
+    const { idCategory } = useParams();
 
     useEffect(() => {
-        firestoreFetch()
+        firestoreFetch(idCategory)
         .then((result) => setDatos(result))
         .catch(err => console.log(err));
-    }, [categoryName]);
+    }, [idCategory]);
+
+    useEffect(() => {
+        return (() => {
+            setDatos([]);
+        })
+    }, []);
 
     return <>
         <h1 className="estilosTitulos tituloTienda">Der Zauberladen</h1>

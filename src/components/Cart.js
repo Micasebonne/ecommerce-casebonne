@@ -22,7 +22,7 @@ const Cart = () => {
                     ? context.cartList.map(item =>
                         <div key={item.idItem} className="cartContainer">
                             <div className="imgCart">
-                                <img src={item.imgItem} title={item.img}></img>
+                                <img src={item.imgItem} title={item.imgItem} alt={item.imgItem}></img>
                             </div>
                             <div className="cartDetail">
                                 <p className="cartSubText">Producto: {item.nameItem}</p>

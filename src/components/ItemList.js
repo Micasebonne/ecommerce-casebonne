@@ -15,14 +15,14 @@ const ItemList = ({ items }) => {
                     : <>
                         <br></br>
                         <p className="spinner">Cargando...</p>
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-grow text-secondary" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                        <div className="d-flex justify-content-center">
+                            <div className="spinner-grow text-secondary" role="status">
+                                <span className="visually-hidden">Loading...</span>
                             </div>
-                            <div class="spinner-grow text-secondary" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div><div class="spinner-grow text-secondary" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                            <div className="spinner-grow text-secondary" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div><div className="spinner-grow text-secondary" role="status">
+                                <span className="visually-hidden">Loading...</span>
                             </div>
                         </div>
                     </>
