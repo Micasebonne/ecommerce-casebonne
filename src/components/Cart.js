@@ -1,11 +1,49 @@
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import { Link } from 'react-router-dom';
+import { collection, doc, setDoc, updateDoc, increment } from 'firebase/firestore';
+import db from '../utils/firebaseConfig';
 
 
 const Cart = () => {
     const context = useContext(CartContext);
 
+    const createOrder = () => {
+        let order = {
+            buyer: {
+                name: "Ramiro Rodriguez",
+                email: "rami22@hotmail.com",
+                phone: "1576846352"
+            },
+            items: context.cartList.map(item =>({
+                id: item.idItem,
+                title: item.nameItem,
+                price: item.priceItem,
+                cantidad: item.cantItem
+            })),
+            fecha: context.dateAndHour(),
+            total: context.totalCompra()
+        };
+        console.log(order);
+
+        const createOrderInFireStore = async() => {
+            const newOrderRef = doc(collection(db, "orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
+        }
+        createOrderInFireStore()
+            .then(result => alert("Su número de orden de compra es " + result.id + ". Por consola verá los detalles de la misma. ¡Gracias por su visita!"))
+            .catch(err => console.log(err));
+        
+        context.cartList.forEach(async(item) => {
+            const itemRef = doc(db, "data", item.idItem);
+            await updateDoc(itemRef, {
+                stock: increment(-item.cantItem)
+            })
+        })
+        context.clear();
+    }
+    
     return (
         <>
             <h1 className="cartText">Tu carrito de compras</h1>
@@ -49,7 +87,7 @@ const Cart = () => {
                     <hr></hr>
                     <h3 className="compraText" style={{textDecoration: "underline"}}><b>Compra total:</b> $ {context.totalCompra()}  </h3>
                     <div className="contenedorBoton">
-                    <button className="botonCount">Finalizar compra</button>
+                    <button className="botonCount" onClick={createOrder}>Finalizar compra</button>
                     </div>
                 </div> 
             }

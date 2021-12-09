@@ -59,6 +59,14 @@ const CartContextProvider = ({ children }) => {
         return subtotalItems() + sumaIva() - descuento()
     }
 
+    const dateAndHour = () => {
+        const today = new Date();
+        const date = today.getDate() + '-' + (today.getMonth() + 1 ) + '-' + today.getFullYear();
+        const hour = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        const dateAndHour = date + ' ' + hour;
+        return dateAndHour
+    }
+
     return (
         <CartContext.Provider value={{
             cartList,
@@ -70,7 +78,8 @@ const CartContextProvider = ({ children }) => {
             cantidadItems,
             sumaIva,
             descuento,
-            totalCompra
+            totalCompra,
+            dateAndHour
         }}>
             {children}
         </CartContext.Provider>
