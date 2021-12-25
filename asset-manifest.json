@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ecommerce-casebonne/static/css/main.79a0a4d4.chunk.css",
+    "main.js": "/ecommerce-casebonne/static/js/main.bc0b5b06.chunk.js",
+    "main.js.map": "/ecommerce-casebonne/static/js/main.bc0b5b06.chunk.js.map",
+    "runtime-main.js": "/ecommerce-casebonne/static/js/runtime-main.1cabed41.js",
+    "runtime-main.js.map": "/ecommerce-casebonne/static/js/runtime-main.1cabed41.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/ecommerce-casebonne/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.407e7279.chunk.js": "/ecommerce-casebonne/static/js/2.407e7279.chunk.js",
+    "static/js/2.407e7279.chunk.js.map": "/ecommerce-casebonne/static/js/2.407e7279.chunk.js.map",
+    "static/js/3.3ac9cce1.chunk.js": "/ecommerce-casebonne/static/js/3.3ac9cce1.chunk.js",
+    "static/js/3.3ac9cce1.chunk.js.map": "/ecommerce-casebonne/static/js/3.3ac9cce1.chunk.js.map",
+    "index.html": "/ecommerce-casebonne/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/ecommerce-casebonne/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.79a0a4d4.chunk.css.map": "/ecommerce-casebonne/static/css/main.79a0a4d4.chunk.css.map",
+    "static/js/2.407e7279.chunk.js.LICENSE.txt": "/ecommerce-casebonne/static/js/2.407e7279.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cabed41.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.407e7279.chunk.js",
+    "static/css/main.79a0a4d4.chunk.css",
+    "static/js/main.bc0b5b06.chunk.js"
+  ]
+}
