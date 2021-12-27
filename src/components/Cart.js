@@ -88,7 +88,7 @@ const Cart = () => {
                     <hr></hr>
                     <h3 className="compraText" style={{ textDecoration: "underline" }}><b>Compra total:</b> $ {context.totalCompra()}  </h3>
                     <p className="text-center">Por favor, ingrese sus datos para generar la orden de compra</p>
-                    <div class="col-md-12">
+                    <div className="col-md-12">
                         <form>
                             <div className="row">
                                 <div className="col-md-6 mb-4">
@@ -114,7 +114,6 @@ const Cart = () => {
                             </div>
                         </form>
                     </div>
-                    context.formActivado();
                     <div className="contenedorBoton">
                         <button className="botonCount" onClick={createOrder}>Finalizar compra</button>
                     </div>
