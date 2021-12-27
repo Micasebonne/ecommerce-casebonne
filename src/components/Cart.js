@@ -11,11 +11,12 @@ const Cart = () => {
     const createOrder = () => {
         let order = {
             buyer: {
-                name: "Ramiro Rodriguez",
-                email: "rami22@hotmail.com",
-                phone: "1576846352"
+                name: document.getElementById("nombre").value,
+                surname: document.getElementById("apellido").value,
+                phone: document.getElementById("celular").value,
+                email: document.getElementById("email").value
             },
-            items: context.cartList.map(item =>({
+            items: context.cartList.map(item => ({
                 id: item.idItem,
                 title: item.nameItem,
                 price: item.priceItem,
@@ -26,7 +27,7 @@ const Cart = () => {
         };
         console.log(order);
 
-        const createOrderInFireStore = async() => {
+        const createOrderInFireStore = async () => {
             const newOrderRef = doc(collection(db, "orders"));
             await setDoc(newOrderRef, order);
             return newOrderRef;
@@ -34,8 +35,8 @@ const Cart = () => {
         createOrderInFireStore()
             .then(result => alert("Su número de orden de compra es " + result.id + ". Por consola verá los detalles de la misma. ¡Gracias por su visita!"))
             .catch(err => console.log(err));
-        
-        context.cartList.forEach(async(item) => {
+
+        context.cartList.forEach(async (item) => {
             const itemRef = doc(db, "data", item.idItem);
             await updateDoc(itemRef, {
                 stock: increment(-item.cantItem)
@@ -43,7 +44,7 @@ const Cart = () => {
         })
         context.clear();
     }
-    
+
     return (
         <>
             <h1 className="cartText">Tu carrito de compras</h1>
@@ -85,11 +86,39 @@ const Cart = () => {
                     <p className="compraText"><b>Impuesto IVA (21%):</b> $ {context.sumaIva()} </p>
                     <p className="compraText"><b>Promociones y descuentos:</b> -$ {context.descuento()}</p>
                     <hr></hr>
-                    <h3 className="compraText" style={{textDecoration: "underline"}}><b>Compra total:</b> $ {context.totalCompra()}  </h3>
-                    <div className="contenedorBoton">
-                    <button className="botonCount" onClick={createOrder}>Finalizar compra</button>
+                    <h3 className="compraText" style={{ textDecoration: "underline" }}><b>Compra total:</b> $ {context.totalCompra()}  </h3>
+                    <p className="text-center">Por favor, ingrese sus datos para generar la orden de compra</p>
+                    <div class="col-md-12">
+                        <form>
+                            <div className="row">
+                                <div className="col-md-6 mb-4">
+                                    <label>Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required
+                                        className="form-control"></input>
+                                </div>
+                                <div className="col-md-6 mb-4">
+                                    <label>Apellido</label>
+                                    <input type="text" name="apellido" id="apellido" placeholder="Tu apellido" required
+                                        className="form-control"></input>
+                                </div>
+                                <div className="col-md-6 mb-4">
+                                    <label>Teléfono</label>
+                                    <input type="number" name="celular" id="celular" className="form-control" placeholder="Ingrese su número de teléfono">
+                                    </input>
+                                </div>
+                                <div className="col-md-6 mb-4">
+                                    <label>Email</label>
+                                    <input type="email" name="email" id="email" className="form-control" placeholder="Ingrese su mail">
+                                    </input>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </div> 
+                    context.formActivado();
+                    <div className="contenedorBoton">
+                        <button className="botonCount" onClick={createOrder}>Finalizar compra</button>
+                    </div>
+                </div>
             }
         </>
     );

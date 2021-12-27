@@ -14,9 +14,6 @@ function NavBar() {
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-            <Link to='/' style={{textDecoration: "none"}} className="nav-link" aria-current="page">Inicio</Link>
-            </li>
-            <li className="nav-item">
             <Link to='/category/sw1LqCOZTucSCl3AMMKB' style={{textDecoration: "none"}} className="nav-link">Pociones</Link>
             </li>
             <li className="nav-item">
